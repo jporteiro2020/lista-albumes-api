@@ -9,11 +9,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const app_1 = require("./app");
-function main() {
+exports.pool = void 0;
+const promise_1 = require("mysql2/promise");
+const { database } = require('../keys');
+function pool() {
     return __awaiter(this, void 0, void 0, function* () {
-        const app = new app_1.App();
-        yield app.listen();
+        const connection = yield (0, promise_1.createPool)({
+            host: database.host,
+            user: database.user,
+            password: database.password,
+            database: database.database
+        });
+        return connection;
     });
 }
-main();
+exports.pool = pool;
