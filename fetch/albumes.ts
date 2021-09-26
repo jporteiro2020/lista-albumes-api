@@ -21,11 +21,14 @@ export async function fetchAlbumes(idArtista: string, token: string): Promise<st
             // Recorro la lista de ábumes para eliminar los álbumes repetidos
             // Es decir, elimino aquellos álbumes que tengan el mismo nombre
             let cantidadFor = items.length;
+            console.log("cantidad items:", cantidadFor)
             for(let i = 0; i < cantidadFor; i++){
                 for(let x=i+1; x<cantidadFor; x++){
                     if(items[i].name === items[x].name){
                         items.splice(items.indexOf(items[x]), 1);
                         cantidadFor -= 1;
+                        i = 0;
+                        x = 1;
                     }
                 }
             }
@@ -78,7 +81,9 @@ export async function fetchAlbumes(idArtista: string, token: string): Promise<st
                 });
 
                 // Aquí dejo los elementos que solamente tienen yyyy como fecha al final.
-                Array.prototype.push.apply(items, itemsYear);
+                for(let i = 0; i < itemsYear.length; i++){
+                    Array.prototype.push.apply(items, itemsYear[i]);
+                }
             }
 
             //Si tiene registros devuelvo los items (array con información de los albumes)
