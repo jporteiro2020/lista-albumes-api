@@ -20,10 +20,12 @@
   "homepage": "https://github.com/jporteiro2020/lista-albumes-api#readme",
   "dependencies": {
     "@types/node-fetch": "^3.0.3",
+    "@types/qs": "^6.9.7",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mysql2": "^2.3.0",
-    "node-fetch": "^2.6.5"
+    "node-fetch": "^2.6.5",
+    "qs": "^6.7.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
