@@ -1,3 +1,5 @@
+Desarrollador: [Jonatan Porteiro](https://www.linkedin.com/in/jonatan-porteiro/)
+
 # lista-albumes-api
 Proyecto backend en el cual se utilizará NodeJS, Express y MySql
 
